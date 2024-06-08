@@ -7,8 +7,13 @@ require('./db'); // Asegura que el Singleton de la base de datos esté inicializ
 
 
 const app = express();
+app.use(express.json());
 dotenv.config();
 const PORT = process.env.PORT || 5000;
+
+app.get("/",(req, res) =>{
+    res.send('ola')
+})
 
 // Middleware
 app.use(cors());
